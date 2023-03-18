@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,8 +16,8 @@ public class GameManager : MonoBehaviour
     public int curLv = 1;
     public int maxLv = 10;
     public MapGenerator mapGenerator;
-    public Text scoreText;
-    public Text stageNumText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI stageNumText;
 
     public void SetBucketAndBalls()
     {
@@ -33,8 +35,8 @@ public class GameManager : MonoBehaviour
         curCnt = 0;
         maxCnt = balls.Length;
 
-        /*scoreText.text = curCnt + "/" + maxCnt;
-        stageNumText.text = "STAGE :::" + curLv.ToString();*/
+        scoreText.text = curCnt + " / " + maxCnt;
+        stageNumText.text = curLv.ToString();
         Debug.Log("max cnt ::: " + maxCnt);
     }
 
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
             }
         }
         correctCnt = 0;
-        //scoreText.text = curCnt + "/" + maxCnt;
+        scoreText.text = curCnt + " / " + maxCnt;
 
         if (curCnt == maxCnt)
         {
@@ -75,5 +77,30 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("¿ÁΩ√¿€");
         mapGenerator.MapDestroy(curLv);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
+
+    public void MoveToStage()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void MoveToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void ExitTheGame()
+    {
+        Application.Quit();
     }
 }

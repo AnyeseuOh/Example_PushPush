@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     RaycastHit hit;
     RaycastHit hit2;
     public GameManager gameManager;
+    public Camera followCam;
 
     // Start is called before the first frame update
     void Start()
