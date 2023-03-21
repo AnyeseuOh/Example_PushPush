@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/Main.unity
     guid: 8e05f7bdfb59dec4fa12525f852b00bb
+  - enabled: 1
+    path: Assets/01_Scenes/DdongGame_V2_Intro.unity
+    guid: e4477f71268406d44b52de1cfe606066
+  - enabled: 1
+    path: Assets/01_Scenes/DdongGame_V2.unity
+    guid: 6d1a762b6152e9c41ab8c8bcfec19ede
   m_configObjects: {}

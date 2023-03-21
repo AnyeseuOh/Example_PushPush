@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Bucket
   - Ball
+  - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX
